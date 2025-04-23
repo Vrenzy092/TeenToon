@@ -4,11 +4,10 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.textfield.TextInputEditText
 
 class SignIn : AppCompatActivity() {
 
@@ -16,15 +15,9 @@ class SignIn : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
-        val inputUsername = findViewById<EditText>(R.id.Usn)
-        val password = findViewById<EditText>(R.id.Pass)
+        var inputUsername = findViewById<EditText>(R.id.Usn)
+        var password = findViewById<EditText>(R.id.Pass)
         val btnNext = findViewById<Button>(R.id.btnNext)
-
-        btnNext.setOnClickListener {
-            val intent = Intent(this, Home::class.java)
-            startActivity(intent)
-            finish()
-        }
 
 
         val buttonDrawable = GradientDrawable().apply {
@@ -33,16 +26,27 @@ class SignIn : AppCompatActivity() {
             setColor(Color.GRAY)
         }
 
-        btnNext.background = buttonDrawable
 
-        /*val isAllFilled = InputUsername.text!!.isNotEmpty() && Password.text!!.isNotEmpty()
+        btnNext.setOnClickListener {
+            val usn = inputUsername.text.toString()
+            val pass = password.text.toString()
 
-        if (isAllFilled) {
-                btnNext.isEnabled = true
-                buttonDrawable.setColor(Color.parseColor("000080"))
-        } else {
-                btnNext.isEnabled = false
-                buttonDrawable.setColor(Color.GRAY)
-        }*/
+            if (usn.isEmpty() || pass.isEmpty()) {
+                Toast.makeText(this, "Username dan Password harus diisi!", Toast.LENGTH_SHORT)
+                    .show()
+            } else {
+                if (usn == "user" && pass == "password123") {
+                    Toast.makeText(this, "Login Berhasil!", Toast.LENGTH_SHORT).show()
+
+
+                    val intent = Intent(this, Home::class.java)
+                    startActivity(intent)
+                    finish()
+
+                } else {
+                    Toast.makeText(this, "Username atau Password salah!", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
     }
 }
