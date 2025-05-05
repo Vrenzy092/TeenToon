@@ -74,7 +74,7 @@ class SignUp : AppCompatActivity() {
                         val intent = Intent(this, Home::class.java)
                         startActivity(intent)
                         finish()
-                    } else {
+                    }else {
                         Toast.makeText(this, "Registrasi gagal: ${task.exception?.message}", Toast.LENGTH_LONG).show()
                     }
                 }
