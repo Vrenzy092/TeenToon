@@ -13,9 +13,14 @@ class Home : AppCompatActivity() {
         val btn1 = findViewById<ImageButton>(R.id.btn1)
 
         btn1.setOnClickListener {
-            val intent = Intent(this, komik::class.java)
-            startActivity(intent)
-            finish()
+            Detailkomik("Comic1")
         }
+    }
+
+    private fun Detailkomik(comicId: String){
+        val intent = Intent(this, komik::class.java)
+        intent.putExtra("comic_id", comicId)
+        startActivity(intent)
+        finish()
     }
 }

@@ -20,13 +20,30 @@
 
 
 
+
+
+
+
+
+
+
+
     ]]>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="412dp"
+        android:layout_height="252dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/komik1"
+        tools:layout_editor_absoluteY="-15dp" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="20dp"
         android:text="Judul: "
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,11 +81,11 @@
     <HorizontalScrollView
         android:layout_width="406dp"
         android:layout_height="138dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtsinopsis"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
@@ -92,6 +109,14 @@
         </LinearLayout>
     </HorizontalScrollView>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="216dp"
+        android:layout_height="195dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="250dp" />
+
     <TextView
         android:id="@+id/txtsinopsis"
         android:layout_width="wrap_content"
@@ -105,14 +130,14 @@
         android:id="@+id/txtjudul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="42dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="20dp"
         android:text="TextView"
         app:layout_constraintStart_toEndOf="@+id/textView11"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/txtgenre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -129,15 +154,6 @@
         android:layout_marginTop="16dp"
         android:text="TextView"
         app:layout_constraintStart_toEndOf="@+id/textView13"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="412dp"
-        android:layout_height="252dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/komik1" />
+        app:layout_constraintTop_toBottomOf="@+id/txtgenre" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
