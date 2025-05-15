@@ -15,10 +15,10 @@
         android:theme="@style/Theme.TeenToonn"
         tools:targetApi="31">
         <activity
-            android:name=".Chapter"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Home"
+            android:name=".Chapter"
             android:exported="false" />
         <activity
             android:name=".SignUp"
@@ -28,9 +28,9 @@
             android:exported="false" />
         <activity
             android:name=".komik"
-            android:exported="true" />
+            android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Welcome"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,29 +1,35 @@
 package com.example.teentoon
 
-import android.content.Intent
+
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupWithNavController
+import com.example.teentoon.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        val btnSignIn = findViewById<Button>(R.id.btnSignIn)
-        val btnSignUp = findViewById<Button>(R.id.btnSignUp)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        btnSignIn.setOnClickListener {
-            val intent = Intent(this, SignIn::class.java)
-            startActivity(intent)
-        }
+        val navView: BottomNavigationView = binding.navView
 
-        btnSignUp.setOnClickListener{
-            val intent = Intent(this, SignUp::class.java)
-            startActivity(intent)
-        }
+        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.navigation_home, R.id.navigation_community, R.id.navigation_reflection, R.id.navigation_profile
+            )
+        )
+
+        navView.setupWithNavController(navController)
     }
 }

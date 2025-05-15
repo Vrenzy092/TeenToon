@@ -71,7 +71,7 @@ class SignUp : AppCompatActivity() {
                             .child(uid ?: "")
                             .setValue(user)
 
-                        val intent = Intent(this, Home::class.java)
+                        val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                         finish()
                     }else {
