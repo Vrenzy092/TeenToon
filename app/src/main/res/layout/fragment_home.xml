@@ -5,59 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
-        android:layout_width="411dp"
-        android:layout_height="597dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/btn"
-                android:layout_width="158dp"
-                android:layout_height="138dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                app:srcCompat="@drawable/komik1cover" />
-
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="68dp"
-                android:layout_marginTop="8dp"
-                android:clickable="true"
-                android:text="Buble Faith"
-                android:textSize="15dp" />
-
-            <ImageButton
-                android:id="@+id/btn1"
-                android:layout_width="157dp"
-                android:layout_height="155dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                app:srcCompat="@drawable/komik1cover" />
-
-            <TextView
-                android:id="@+id/TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="68dp"
-                android:layout_marginTop="8dp"
-                android:clickable="true"
-                android:text="Yuk ke Gereja"
-                android:textSize="15dp" />
-
-        </LinearLayout>
-
-    </ScrollView>
 
     <TextView
         android:id="@+id/textView8"
@@ -89,5 +36,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="382dp"
+        android:layout_height="304dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

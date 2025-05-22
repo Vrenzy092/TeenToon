@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     kotlin("plugin.serialization") version "2.1.20"
     alias(libs.plugins.google.gms.google.services)
+
 }
 
 android {
@@ -58,6 +59,9 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.fragment.ktx)
+    implementation("com.google.firebase:firebase-messaging:23.4.1")
+    implementation("androidx.recyclerview:recyclerview:1.4.0")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

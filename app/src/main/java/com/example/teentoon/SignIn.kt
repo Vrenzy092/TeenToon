@@ -6,12 +6,15 @@ import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.messaging.FirebaseMessaging
 
 class SignIn : AppCompatActivity() {
 
@@ -56,6 +59,15 @@ class SignIn : AppCompatActivity() {
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         Toast.makeText(this, "Sign In berhasil", Toast.LENGTH_SHORT).show()
+
+                        FirebaseMessaging.getInstance().subscribeToTopic("all_users")
+                            .addOnCompleteListener { task ->
+                                if (task.isSuccessful) {
+                                    Log.d("TeenToon", "Berhasil subscribe ke topik all_users")
+                                } else {
+                                    Log.e("TeenToon", "Gagal subscribe: ${task.exception}")
+                                }
+                            }
 
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
