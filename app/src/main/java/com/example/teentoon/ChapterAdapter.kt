@@ -3,10 +3,12 @@ package com.example.teentoon
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.teentoon.Chapters
 import com.example.teentoon.databinding.ItemChapterBinding
 
 class ChapterAdapter(
-    private val chapterList: List<Pair<String, String>>,
+    private val chapterList: List<Pair<String, Chapters>>,
     private val onClick: (String) -> Unit
 ) : RecyclerView.Adapter<ChapterAdapter.ChapterViewHolder>() {
 
@@ -18,10 +20,17 @@ class ChapterAdapter(
     }
 
     override fun onBindViewHolder(holder: ChapterViewHolder, position: Int) {
-        val (chapterId, url) = chapterList[position]
-        holder.binding.txtchapters.text = "Chapter $chapterId"
+        val (chapterId, Chapters) = chapterList[position]
+        val cleanChapterId = chapterId.replace("\"", "")
+        holder.binding.txtchapters.text = "Chapter $cleanChapterId"
+
+        Glide.with(holder.itemView.context)
+            .load(Chapters.Img)
+            .placeholder(R.drawable.ic_launcher_background) // optional
+            .into(holder.binding.imageChapter)
+
         holder.binding.imageChapter.setOnClickListener {
-            onClick(url)
+            onClick(Chapters.Url)
         }
     }
 

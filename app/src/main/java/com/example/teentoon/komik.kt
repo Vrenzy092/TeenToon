@@ -14,6 +14,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.example.teentoon.databinding.ActivityKomikBinding
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.teentoon.Chapters
 
 
 class komik : AppCompatActivity() {
@@ -22,7 +23,7 @@ class komik : AppCompatActivity() {
     private lateinit var db: DatabaseReference
     private lateinit var database: FirebaseDatabase
     private lateinit var chapterAdapter: ChapterAdapter
-    private val chapterList = mutableListOf<Pair<String, String>>()
+    private val chapterList = mutableListOf<Pair<String, Chapters>>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,9 +80,11 @@ class komik : AppCompatActivity() {
                     chapterList.clear()
                     for (chapterSnapshot in snapshot.children) {
                         val chapterId = chapterSnapshot.key ?: continue
-                        val url = chapterSnapshot.getValue(String::class.java) ?: continue
-                        chapterList.add(Pair(chapterId, url))
+                        val chapters = chapterSnapshot.getValue(Chapters::class.java) ?: continue
+                        chapterList.add(Pair(chapterId, chapters))
                     }
+                    chapterList.sortBy { it.first } // urutkan berdasarkan nomor chapter
+                    chapterAdapter.notifyDataSetChanged()
                 }
                 override fun onCancelled(error: DatabaseError) {
 

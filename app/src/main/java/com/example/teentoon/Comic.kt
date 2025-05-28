@@ -6,6 +6,6 @@ data class Comic(
     val Genre: String = "",
     val Sinopsis: String = "",
     val Coverimg: String = "",
-    val Chapter: Map<String, String>? = null
+    val Chapter: Map<String, Chapters>? = null
 
 )
