@@ -45,6 +45,7 @@ class ProfileFragment : Fragment() {
                 .get().addOnSuccessListener { snapshot ->
                     val username = snapshot.value?.toString() ?: "Unknown"
                     binding.txtusername.text = username
+
                 }
                 .addOnFailureListener {
                     binding.txtusername.text = "GUEST"
@@ -61,6 +62,10 @@ class ProfileFragment : Fragment() {
             startActivity(intent)
             requireActivity().finish()
             // Arahkan ke halaman login jika diperlukan
+        }
+
+        binding.btnBacksound.setOnClickListener {
+
         }
     }
 

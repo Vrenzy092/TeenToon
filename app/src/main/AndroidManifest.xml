@@ -45,6 +45,12 @@
             </intent-filter>
         </service>
 
+        <service
+            android:name=".BacksoundService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
+
     </application>
 
 </manifest>
