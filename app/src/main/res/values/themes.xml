@@ -9,7 +9,7 @@
 
     <style name="Theme.TeenToon.Splash" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/white</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/logoteentoon</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/logoteentoonn</item>
         <item name="postSplashScreenTheme">@style/Theme.TeenToonn</item>
     </style>
 
