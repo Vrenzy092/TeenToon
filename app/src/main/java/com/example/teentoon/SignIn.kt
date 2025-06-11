@@ -44,14 +44,6 @@ class SignIn : AppCompatActivity() {
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
-        val buttonDrawable = GradientDrawable().apply {
-            shape = GradientDrawable.RECTANGLE
-            cornerRadius = 10f * resources.displayMetrics.density
-            setColor(Color.GRAY)
-        }
-
-        btnNext.background = buttonDrawable
-
         btnNext.setOnClickListener {
             val email = em.text.toString()
             val password = pass.text.toString()

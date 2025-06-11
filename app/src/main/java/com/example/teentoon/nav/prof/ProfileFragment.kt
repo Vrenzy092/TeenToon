@@ -65,7 +65,9 @@ class ProfileFragment : Fragment() {
         }
 
         binding.btnBacksound.setOnClickListener {
-
+            val intent = Intent(requireContext(), BacksoundActivity::class.java)
+            startActivity(intent)
+            requireActivity().finish()
         }
     }
 
