@@ -104,7 +104,7 @@ class HomeFragment : Fragment() {
             fullComicList
         } else {
             fullComicList.filter {
-                it.second.Genre.equals(genre, ignoreCase = true)
+                it.second.Genre.contains(genre, ignoreCase = true)
             }
         }
         comicAdapter.updateData(filteredList)

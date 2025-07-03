@@ -125,10 +125,20 @@ class SignIn : AppCompatActivity() {
 
                     FirebaseDatabase.getInstance().getReference("Users")
                         .child(uid ?: "")
-                        .setValue(userData)
+                        .updateChildren(userData)
                         .addOnCompleteListener { dbTask ->
                             if (dbTask.isSuccessful) {
                                 Toast.makeText(this, "Login berhasil", Toast.LENGTH_SHORT).show()
+
+                                FirebaseMessaging.getInstance().subscribeToTopic("all_users")
+                                    .addOnCompleteListener { task ->
+                                        if (task.isSuccessful) {
+                                            Log.d("TeenToon", "Berhasil subscribe ke topik all_users")
+                                        } else {
+                                            Log.e("TeenToon", "Gagal subscribe: ${task.exception}")
+                                        }
+                                    }
+
                                 val intent = Intent(this, MainActivity::class.java)
                                 startActivity(intent)
                                 finish()

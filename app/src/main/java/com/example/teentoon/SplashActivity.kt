@@ -21,6 +21,6 @@ class SplashActivity : ComponentActivity() {
                 startActivity(Intent(this, Welcome::class.java))
             }
             finish()
-        }, 500) // 2 detik
+        }, 300) // 2 detik
     }
 }
