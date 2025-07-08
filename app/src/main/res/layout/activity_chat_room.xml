@@ -5,12 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#03A9F4"
     tools:context=".nav.com.ChatRoomActivity">
 
     <LinearLayout
         android:id="@+id/frameLayout"
-        android:layout_width="400dp"
-        android:layout_height="88dp"
+        android:layout_width="378dp"
+        android:layout_height="101dp"
         android:layout_marginTop="16dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
@@ -22,23 +23,30 @@
             android:id="@+id/imgCom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_launcher_background" />
+            app:srcCompat="@drawable/community" />
 
         <TextView
             android:id="@+id/txtCom"
-            android:layout_marginStart="25dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
             android:text="TextView"
             android:textSize="20sp"
             android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnLain"
+            android:layout_width="30dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="160dp"
+            android:backgroundTint="#03A9F4" />
 
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerChat"
-        android:layout_width="405dp"
-        android:layout_height="490dp"
+        android:layout_width="404dp"
+        android:layout_height="561dp"
         android:layout_marginTop="16dp"
         android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"

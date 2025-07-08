@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 
 class ReflectionViewModel : ViewModel() {
     private val _text = MutableLiveData<String>().apply {
-        value = "This is Reflection Fragment"
+        value = "Coming Soon"
     }
     val text: LiveData<String> = _text
 }
