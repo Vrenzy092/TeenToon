@@ -62,6 +62,7 @@ class ChatRoomActivity : AppCompatActivity() {
             val text = editText.text.toString().trim()
             if (text.isNotEmpty()) {
                 sendMessage(text)
+                scrollToBottom(recycler)
                 editText.setText("")
             }
         }
@@ -101,5 +102,11 @@ class ChatRoomActivity : AppCompatActivity() {
                 adapter.notifyDataSetChanged()
                 recycler.scrollToPosition(messageList.size - 1)
             }
+    }
+
+    private fun scrollToBottom(recycler: RecyclerView) {
+         recycler.post{
+            recycler.scrollToPosition(adapter.itemCount - 1)
+        }
     }
 }
